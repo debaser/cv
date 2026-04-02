@@ -1,0 +1,58 @@
+a {
+    color: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+p {
+    margin: 0;
+
+    + p {
+        margin-top: 1em;
+    }
+}
+
+.percent-bar {
+    .percent-bar();
+}
+
+.time-milestione {
+    .time-milestione();
+}
+
+.skills {
+    .skills();
+}
+
+.block {
+    margin-bottom: 3em;
+
+    h1 {
+        .mainTitle();
+    }
+
+    h2 {
+        a {
+            font-weight: inherit;
+        }
+    }
+
+    a {
+        .transition(all 0.5s ease);
+        color: @darkColor;
+        white-space: nowrap;
+
+        &:hover {
+            color: @mainColor;
+        }
+    }
+
+    @media print {
+        margin-bottom: 2.5em;
+    }
+}
