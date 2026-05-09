@@ -1,200 +1,1020 @@
 <!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joel Gonçalves — Desarrollador Web</title>
+    <meta name="description" content="Desarrollador web con experiencia en frontend y backend. Portafolio y CV de Joel Gonçalves." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="joel.webp" type="image/webp" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      :root {
+        --lime: #aaee44;
+        --lime-dark: #4a7800;
+        --navy: #0e1b2e;
+        --navy-mid: #1a2d47;
+        --navy-light: #2a4060;
+        --text: #0e1b2e;
+        --muted: #5a6a7e;
+        --border: #d8e2ed;
+        --bg: #f4f7fa;
+        --white: #ffffff;
+      }
 
-  <title>CV Joel Gonçalves</title>
-  <meta name="description" content="Curriculum Vitae de Joel Gonçalves">
-  <meta name="author" content="Joel Gonçalves">
+      html {
+        font-size: 16px;
+      }
 
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+      body {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        color: var(--text);
+        background: var(--bg);
+        min-height: 100vh;
+      }
 
-  <link rel="stylesheet" href="assets/css/main.css?v=1.1">
+      /* ─── LAYOUT ─────────────────────────────── */
+      .page {
+        max-width: 900px;
+        margin: 3rem auto;
+        background: var(--white);
+        box-shadow: 0 4px 40px rgba(14, 27, 46, 0.1);
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: auto 1fr;
+      }
 
-</head>
+      /* ─── HEADER ─────────────────────────────── */
+      .header {
+        grid-column: 1 / -1;
+        background: var(--navy);
+        color: white;
+        padding: 3rem 3rem 2.5rem;
+        display: flex;
+        align-items: flex-end;
+        gap: 2.5rem;
+        position: relative;
+        overflow: hidden;
+      }
 
-<body>
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: var(--lime);
+        opacity: 0.07;
+      }
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        left: 200px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: var(--lime);
+        opacity: 0.05;
+      }
 
-<div id="outer-wrap">
+      .avatar {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 3px solid var(--lime);
+        object-fit: cover;
+        object-position: top center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+      }
 
-    <div id="main-wrap">
+      .header-text {
+        position: relative;
+        z-index: 1;
+      }
 
-        <header id="header">
-            <div class="avatar-holder"><img src="assets/img/avatar.jpg" alt="Foto" /></div>
-            <h1>Joel Gonçalves</h1>
-            <h2>Desarrollador web</h2>
-            <nav>
-                <ul>
-                    <li class="tel"><a href="tel:+34630988007">630 988 007</a></li>
-                    <li class="mail"><a href="mailto:joel.goncalves@gmail.com">joel.goncalves@gmail.com</a></li>
-                    <li class="web"><a href="http://www.joelgoncalves.es">www.joelgoncalves.es</a></li>
-                </ul>
-            </nav>
-        </header>
+      .header-text h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 2.6rem;
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: white;
+      }
 
-        <div id="pagebody">
-            <article>
-                <div class="main-cols">
+      .header-text .role {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--lime);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-top: 0.4rem;
+      }
 
-                    <div class="col-left">
+      .header-contact {
+        margin-top: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+      }
 
-                        <div class="block" id="block-intro">
-                            <h1>En pocas palabras</h1>
-                            <p>Empecé a trabajar como desarrollador web en 2001. Me he especializado en la maquetación web, es decir, generar el código estático del lado cliente a partir de un diseño gráfico. También hago programación del lado servidor con PHP, principalmente proyectos de e-commerce y gestores de contenidos. Desde 2007 trabajo como freelance.</p>
-                        </div>
+      .header-contact a {
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        transition: color 0.2s;
+      }
+      .header-contact a:hover {
+        color: var(--lime);
+      }
 
+      .contact-dot {
+        width: 5px;
+        height: 5px;
+        background: var(--lime);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
 
+      /* ─── SIDEBAR ────────────────────────────── */
+      .sidebar {
+        background: var(--navy-mid);
+        color: white;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
 
+      .sidebar-section h2 {
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--lime);
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
+      /* Skills bars */
+      .skill {
+        margin-bottom: 1.1rem;
+      }
+      .skill-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.35rem;
+      }
+      .skill-name {
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .skill-pct {
+        font-size: 0.75rem;
+        color: var(--lime);
+        font-weight: 500;
+      }
+      .skill-bar {
+        height: 3px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .skill-fill {
+        height: 100%;
+        background: var(--lime);
+        border-radius: 2px;
+        width: 0;
+        transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+      }
 
-                    </div>
+      /* Education */
+      .edu-item {
+        margin-bottom: 1.2rem;
+      }
+      .edu-date {
+        font-size: 0.72rem;
+        color: var(--lime);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.2rem;
+      }
+      .edu-title {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 400;
+        line-height: 1.4;
+      }
 
-                    <div class="col-right">
+      /* ─── MAIN ───────────────────────────────── */
+      .main {
+        padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
 
+      .section h2 {
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1.5px solid var(--border);
+        position: relative;
+      }
+      .section h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1.5px;
+        width: 32px;
+        height: 1.5px;
+        background: var(--lime-dark);
+      }
 
-                        <div class="block" id="block-skills">
-                            <h1>Conocimientos técnicos</h1>
-                            <ul class="skills">
-                                <li>
-                                    <h2>HTML</h2>
-                                    <div class="percent-bar"><span class="value" style="width: 95%;">95%</span></div>
-                                </li>
-                                <li>
-                                    <h2>CSS <span class="area">( less / sass )</span></h2>
-                                    <div class="percent-bar"><span class="value" style="width: 95%;">95%</span></div>
-                                </li>
-                                <li>
-                                    <h2>CSS "libraries"<br><span class="area">( tailwind / bootstrap )</span></h2>
-                                    <div class="percent-bar"><span class="value" style="width: 90%;">90%</span></div>
-                                </li>
-                                <li>
-                                    <h2>Javascript / JQuery</h2>
-                                    <div class="percent-bar"><span class="value" style="width: 85%;">85%</span></div>
-                                </li>
-                                <li>
-                                    <h2>PHP / MySQL</h2>
-                                    <div class="percent-bar"><span class="value" style="width: 75%;">75%</span></div>
-                                </li>
-                            </ul>
+      /* About */
+      .about-text {
+        font-size: 0.92rem;
+        line-height: 1.8;
+        color: #3a4a5e;
+        font-weight: 300;
+      }
 
-                            <!--<p class="others"><strong>Otras herramientas y frameworks:</strong> bootstrap, smarty, compass</p>-->
-                        </div>
+      /* Experience */
+      .exp-item {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 0 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+      }
+      .exp-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 100px;
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        background: var(--border);
+        margin-left: 1.5rem;
+      }
 
+      .exp-period {
+        font-size: 0.75rem;
+        color: var(--lime-dark);
+        font-weight: 500;
+        padding-top: 0.15rem;
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+      }
 
+      .exp-company {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.05rem;
+        color: var(--navy);
+        font-weight: 400;
+        margin-bottom: 0.25rem;
+      }
 
+      .exp-role {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+      }
 
+      .exp-desc {
+        font-size: 0.83rem;
+        color: #3a4a5e;
+        line-height: 1.7;
+        font-weight: 300;
+      }
 
-                    </div>
+      /* Projects grid */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
 
-                </div>
-                <div class="main-cols">
+      .project-card {
+        border: 1px solid var(--border);
+        padding: 1rem 1.1rem;
+        border-radius: 6px;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--lime-dark);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.25s;
+      }
+      .project-card:hover {
+        border-color: rgba(170, 238, 68, 0.4);
+        box-shadow: 0 2px 12px rgba(14, 27, 46, 0.07);
+      }
+      .project-card:hover::before {
+        transform: scaleY(1);
+      }
 
+      .project-name {
+        font-weight: 500;
+        font-size: 0.85rem;
+        color: var(--navy);
+        margin-bottom: 0.25rem;
+      }
 
-                    <div class="col-left">
+      .project-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--lime);
+        background: var(--navy);
+        padding: 0.15rem 0.5rem;
+        border-radius: 3px;
+        margin-bottom: 0.4rem;
+      }
 
+      .project-desc {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
 
-                        <div class="block" id="block-experience">
-                            <h1>Experiencia Laboral</h1>
-                            <ul class="time-milestione">
-                                <li>
-                                    <h2>Freelance <span class="date">2007 - Actualmente</span></h2>
-                                    <p>En estos años he trabajado regularmente como maquetador con varias empresas como Ideateca (de <a href="https://enekoknorr.com/">Eneko Knörr</a>)</a> y <a href="https://devengo.com/">Devengo</a>, encargándome de toda la programación que tuviera que ver con el lado cliente ( HTML / CSS / JS ). También trabajo de forma regular con la empresa <a href="https://www.servicesfortheweb.com/">Services for the Web</a> para la que programo toda la parte servidor con PHP / MySQL en proyectos de comercio electrónico y gestores de contenido. Desde 2024 colaboro regularmente con la empresa <a href="https://www.dabasystem.com/">Dabasystem</a> en la maquetación de proyectos.</p>
-                                </li>
-                                <li>
-                                    <h2><a href="https://www.nht-norwick.com">NHT-Norwick</a> <span class="date">2001 - 2007</span></h2>
-                                    <p>Primera empresa en la que trabajé como maquetador. Además, en los últimos años era el responsable de los prototipos, la usabilidad, la arquitectura de información y el cumplimiento de los estándares de accesibilidad web.</p>
-                                </li>
+      /* ─── PRINT ──────────────────────────────── */
+      /* ─── RESPONSIVE ────────────────────────── */
+      @media (max-width: 680px) {
+        .page {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
+          margin: 0;
+          box-shadow: none;
+        }
 
-                            </ul>
-                        </div>
+        .header {
+          grid-column: 1;
+          padding: 2rem 1.5rem 1.8rem;
+          gap: 1.2rem;
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
-                        <div class="block" id="block-education">
-                            <h1>Estudios y formación</h1>
-                            <ul>
-                                <li>
-                                    <h2>Julio 2005</h2>
-                                    <p>Curso de accesibilidad web impartido por Enpresa Digitala.</p>
-                                </li>
-                                <li>
-                                    <h2>Marzo 2003</h2>
-                                    <p>Curso de usabilidad web de 30h. de duración.</p>
-                                </li>
-                                <li>
-                                    <h2>Octubre 1999 - Junio 2000</h2>
-                                    <p>Curso de programación. Lenguajes: C, HTML, Javascript, Visual Basic, ASP y Java.</p>
-                                </li>
-                                <!--li>
-                                    <h2>Junio 1998</h2>
-                                    <p>Título F.P. 2</p>
-                                </li-->
-                            </ul>
-                        </div>
+        .header-text h1 {
+          font-size: 2rem;
+        }
 
-                    </div>
+        .header-contact {
+          gap: 0.4rem 1rem;
+        }
 
-                    <div class="col-right">
+        .sidebar {
+          grid-column: 1;
+          grid-row: 3;
+          padding: 2rem 1.5rem;
+          gap: 2rem;
+        }
 
+        .main {
+          grid-column: 1;
+          grid-row: 2;
+          padding: 2rem 1.5rem;
+        }
 
+        /* Fuentes más grandes en móvil */
+        .about-text {
+          font-size: 1rem;
+          line-height: 1.8;
+        }
 
-                        <div class="block" id="block-projects">
-                            <h1>Algunos proyectos recientes</h1>
-                            <ul>
-                                <li>
-                                  <h2><a href="https://www.devengo.com">Devengo</a> <span class="job">Maquetación</span></h2>
-                                  <p>Maquetación frontend y backend.</p>
-                                  <div class="url"><a href="https://www.devengo.com">devengo.com</a></div>
-                                </li>
-                                <li>
-                                    <h2><a href="https://www.oneshothotels.com/">OneShot Hotels</a> <span class="job">Maquetación</span></h2>
-                                    <p>Maquetación frontend.</p>
-                                    <div class="url"><a href="https://www.oneshothotels.com">oneshothotels.com</a></div>
-                                </li>
-                                <li>
-                                    <h2><a href="https://www.grupblasi.com/">GrupBlasi</a> <span class="job">Maquetación</span></h2>
-                                    <p>Maquetación frontend.</p>
-                                    <div class="url"><a href="https://www.grupblasi.com/">grupblasi.com</a></div>
-                                </li>                                
-                                
-                                <li>
-                                    <h2><a href="https://booking.planetlaser.es/">Planet Laser</a> <span class="job">Programación PHP / MySQL</span></h2>
-                                    <p>Programación de un sistema de reservas de juegos.</p>
-                                    <div class="url"><a href="https://booking.planetlaser.es/">booking.planetlaser.es</a></div>
-                                </li>
-                                <li>
-                                    <h2><a href="https://www.galeriafreijo.com">Galería Freijo</a> <span class="job">Programación PHP / MySQL</span></h2>
-                                    <p>Programación frontend y backend de un sencillo CMS para la gestión de esta galería de arte.</p>
-                                    <div class="url"><a href="https://www.galeriafreijo.com">galeriafreijo.com</a></div>
-                                </li>
-                                <li>
-                                    <h2><a href="https://www.openclima.com">Openclima</a> <span class="job">Programación PHP / MySQL</span></h2>
-                                    <p>Tienda online con pagos TPV y PayPal. Todo el contenido es gestionable desde un panel web de administración.</p>
-                                    <div class="url"><a href="https://www.openclima.com">openclima.com</a></div>
-                                </li>
-                                <!--li>
-                                    <h2><a href="https://www.forvo.com">Forvo</a> <span class="job">Maquetación y programación</span></h2>
-                                    <p>Proyecto personal lanzado en 2008 en el que desarrollo gran parte tanto de la maquetación como de la programación.</p>
-                                    <div class="url"><a href="https://www.forvo.com">forvo.com</a></div>
-                                </li-->
-                            </ul>
-                        </div>
+        .exp-company {
+          font-size: 1.1rem;
+        }
+        .exp-role {
+          font-size: 0.9rem;
+        }
+        .exp-desc {
+          font-size: 0.95rem;
+          line-height: 1.75;
+        }
 
+        .project-name {
+          font-size: 0.95rem;
+        }
+        .project-desc {
+          font-size: 0.88rem;
+          line-height: 1.6;
+        }
+        .project-tag {
+          font-size: 0.72rem;
+        }
 
+        .section h2 {
+          font-size: 0.75rem;
+        }
 
-                    </div>
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 0.3rem;
+        }
 
-                </div>
-            </article>
+        .exp-item:not(:last-child)::after {
+          left: 0;
+          margin-left: 0;
+        }
+
+        .exp-period {
+          font-size: 0.8rem;
+          padding-top: 0;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 900px) and (min-width: 681px) {
+        .page {
+          margin: 1rem;
+          grid-template-columns: 220px 1fr;
+        }
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 14mm 12mm;
+        }
+
+        html,
+        body {
+          background: white;
+          font-size: 11px;
+        }
+
+        body {
+          margin: 0;
+        }
+
+        .page {
+          max-width: 100%;
+          margin: 0;
+          box-shadow: none;
+          grid-template-columns: 190px 1fr;
+          page-break-inside: avoid;
+        }
+
+        /* Sin fondos oscuros — ahorro de tinta */
+        .header {
+          background: white !important;
+          border-bottom: 2px solid #0e1b2e;
+          padding: 1.5rem 2rem 1.2rem;
+          gap: 1.5rem;
+        }
+        .header::before,
+        .header::after {
+          display: none;
+        }
+
+        .header-text h1 {
+          font-size: 1.8rem;
+          color: #0e1b2e !important;
+        }
+        .header-text .role {
+          color: #5a8a00 !important;
+          font-size: 0.72rem;
+        }
+        .header-contact a {
+          color: #3a4a5e !important;
+          font-size: 0.72rem;
+        }
+        .contact-dot {
+          background: #5a8a00 !important;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+          border-color: #5a8a00 !important;
+        }
+
+        .sidebar {
+          background: #f4f7fa !important;
+          padding: 1.5rem 1.2rem;
+          gap: 1.5rem;
+        }
+
+        .sidebar-section h2 {
+          color: #5a8a00 !important;
+          border-bottom-color: #d8e2ed !important;
+        }
+
+        .skill-name {
+          color: #0e1b2e !important;
+        }
+        .skill-pct {
+          color: #5a8a00 !important;
+        }
+        .skill-bar {
+          background: #d8e2ed !important;
+        }
+        .skill-fill {
+          background: #5a8a00 !important;
+        }
+
+        .edu-date {
+          color: #5a8a00 !important;
+        }
+        .edu-title {
+          color: #0e1b2e !important;
+        }
+
+        /* Tags de especialidades */
+        .sidebar div[style*="background:rgba(255,255,255,0.07)"] {
+          background: #e8edf2 !important;
+          color: #0e1b2e !important;
+        }
+
+        .main {
+          padding: 1.5rem 1.8rem;
+          gap: 1.5rem;
+        }
+
+        .sidebar-section h2,
+        .section h2 {
+          font-size: 0.6rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .exp-item {
+          grid-template-columns: 80px 1fr;
+          gap: 0 1rem;
+          padding-bottom: 1rem;
+        }
+        .exp-period {
+          color: #5a8a00 !important;
+        }
+        .exp-company {
+          font-size: 0.9rem;
+        }
+        .exp-desc {
+          font-size: 0.74rem;
+        }
+
+        .about-text {
+          font-size: 0.8rem;
+        }
+
+        .projects-grid {
+          gap: 0.5rem;
+        }
+        .project-card {
+          padding: 0.7rem 0.8rem;
+          border-color: #d8e2ed !important;
+        }
+        .project-name {
+          font-size: 0.76rem;
+        }
+        .project-desc {
+          font-size: 0.7rem;
+        }
+
+        /* Badge de proyecto: navy → gris claro */
+        .project-tag {
+          background: #e8edf2 !important;
+          color: #5a8a00 !important;
+        }
+
+        a {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+        .project-card::before {
+          display: none;
+        }
+        .project-card:hover {
+          box-shadow: none;
+        }
+      }
+
+      /* ─── ANIMATION ──────────────────────────── */
+      @media (prefers-reduced-motion: no-preference) {
+        .header-text {
+          animation: fadeUp 0.6s ease both;
+        }
+        .sidebar {
+          animation: fadeIn 0.5s 0.2s ease both;
+        }
+        .section {
+          animation: fadeUp 0.5s ease both;
+        }
+        .section:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        .section:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <header class="header">
+        <picture>
+          <source srcset="joel.webp" type="image/webp" />
+          <img class="avatar" src="joel.jpg" alt="Foto de Joel Gonçalves" width="130" height="130" />
+        </picture>
+        <div class="header-text">
+          <h1>Joel Gonçalves</h1>
+          <div class="role">Desarrollador Web Frontend</div>
+          <div class="header-contact">
+            <a href="tel:+34630988007"
+              ><span class="contact-dot"></span>630 988 007</a
+            >
+            <a href="mailto:joel.goncalves@gmail.com"
+              ><span class="contact-dot"></span>joel.goncalves@gmail.com</a
+            >
+            <a href="https://www.joelgoncalves.es"
+              ><span class="contact-dot"></span>joelgoncalves.es</a
+            >
+          </div>
         </div>
+      </header>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h2>Conocimientos técnicos</h2>
+          <div class="skill">
+            <div class="skill-header">
+              <span class="skill-name">HTML5</span
+              ><span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-header">
+              <span class="skill-name">CSS / LESS / SASS</span
+              ><span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-header">
+              <span class="skill-name">Tailwind / Bootstrap</span
+              ><span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript / jQuery</span
+              ><span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-header">
+              <span class="skill-name">PHP / MySQL</span
+              ><span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="75"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Especialidades</h2>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+              margin-top: 0.2rem;
+            "
+          >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >Maquetación web</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >WordPress</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >Ruby on Rails</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >E-commerce</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >Accesibilidad</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >Usabilidad</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >SVG / GSAP</span
+            >
+            <span
+              style="
+                font-size: 0.72rem;
+                color: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.07);
+                padding: 0.3rem 0.6rem;
+                border-radius: 3px;
+              "
+              >Vite</span
+            >
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h2>Formación</h2>
+          <div class="edu-item">
+            <div class="edu-date">Jul 2005</div>
+            <div class="edu-title">Accesibilidad web — Enpresa Digitala</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-date">Mar 2003</div>
+            <div class="edu-title">Usabilidad web — 30h</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-date">Oct 1999 – Jun 2000</div>
+            <div class="edu-title">
+              Programación: C, HTML, JS, VB, ASP, Java
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <div class="section">
+          <h2>Sobre mí</h2>
+          <p class="about-text">
+            Empecé a trabajar como desarrollador web en 2001. Me he
+            especializado en maquetación web, generando el código estático del
+            lado cliente a partir de diseños gráficos. También programo en el
+            lado servidor con PHP, principalmente proyectos de e-commerce y
+            gestores de contenido. Desde 2007 trabajo como freelance,
+            colaborando con diversas agencias y empresas de forma continuada.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Experiencia</h2>
+
+          <div class="exp-item">
+            <div class="exp-period">2007 —<br />Actualidad</div>
+            <div>
+              <div class="exp-company">Freelance</div>
+              <div class="exp-role">Desarrollador web frontend & backend</div>
+              <p class="exp-desc">
+                Trabajo regular con empresas como
+                <strong>Devengo</strong> (maquetación frontend/backend en
+                Rails), <strong>Services for the Web</strong> (PHP/MySQL,
+                e-commerce y CMS) y <strong>Dabasystem</strong> (desde 2024).
+                También colaboré con <strong>Ideateca</strong> de Eneko Knörr en
+                proyectos de maquetación avanzada.
+              </p>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-period">2001 —<br />2007</div>
+            <div>
+              <div class="exp-company">NHT-Norwick</div>
+              <div class="exp-role">Maquetador & responsable de usabilidad</div>
+              <p class="exp-desc">
+                Primera empresa como maquetador. En los últimos años asumí la
+                responsabilidad de prototipos, usabilidad, arquitectura de
+                información y cumplimiento de estándares de accesibilidad web.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Proyectos recientes</h2>
+          <div class="projects-grid">
+            <a
+              class="project-card"
+              href="https://www.devengo.com"
+              target="_blank"
+            >
+              <span class="project-tag">Maquetación</span>
+              <div class="project-name">Devengo</div>
+              <div class="project-desc">
+                Frontend y backend en Rails para plataforma fintech de pagos.
+              </div>
+            </a>
+
+            <a
+              class="project-card"
+              href="https://www.oneshothotels.com"
+              target="_blank"
+            >
+              <span class="project-tag">Maquetación</span>
+              <div class="project-name">OneShot Hotels</div>
+              <div class="project-desc">
+                Maquetación frontend para cadena hotelera boutique.
+              </div>
+            </a>
+
+            <a
+              class="project-card"
+              href="https://www.grupblasi.com"
+              target="_blank"
+            >
+              <span class="project-tag">Maquetación</span>
+              <div class="project-name">GrupBlasi</div>
+              <div class="project-desc">
+                Maquetación frontend para grupo empresarial.
+              </div>
+            </a>
+
+            <a
+              class="project-card"
+              href="https://booking.planetlaser.es"
+              target="_blank"
+            >
+              <span class="project-tag">PHP / MySQL</span>
+              <div class="project-name">Planet Laser</div>
+              <div class="project-desc">
+                Sistema de reservas online para juegos de láser.
+              </div>
+            </a>
+
+            <a
+              class="project-card"
+              href="https://www.galeriafreijo.com"
+              target="_blank"
+            >
+              <span class="project-tag">PHP / MySQL</span>
+              <div class="project-name">Galería Freijo</div>
+              <div class="project-desc">
+                CMS a medida para galería de arte contemporáneo.
+              </div>
+            </a>
+
+            <a
+              class="project-card"
+              href="https://www.openclima.com"
+              target="_blank"
+            >
+              <span class="project-tag">E-commerce</span>
+              <div class="project-name">Openclima</div>
+              <div class="project-desc">
+                Tienda online con TPV y PayPal, panel de administración
+                completo.
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
 
-</div>
-
-</body>
+    <script>
+      // Animate skill bars on load
+      window.addEventListener("load", () => {
+        document.querySelectorAll(".skill-fill").forEach((el) => {
+          const w = el.dataset.width;
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              el.style.width = w + "%";
+            }, 300);
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
